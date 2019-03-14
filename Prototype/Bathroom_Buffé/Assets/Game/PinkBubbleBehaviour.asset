@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: PinkBubbleBehaviour
   m_EditorClassIdentifier: 
   slowDownDuration: 2
+  defaultFlySpeed: {fileID: 11400000, guid: 4473a5f6d2a2fef468eeb4b6bcc8ed78, type: 2}
   slowDownVariable: {fileID: 11400000, guid: 62e8da73e590f4e4e8c61a73d2de7161, type: 2}

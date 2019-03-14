@@ -22,12 +22,21 @@ public class FlyController : MonoBehaviour
     public delegate void OnFireProjectileDelegate(FlyController flyController);
     public OnFireProjectileDelegate OnFireProjectile;
 
+    public delegate void OnIncreaseScoreDelegate(int playerIndex, int amount);
+    public OnIncreaseScoreDelegate OnIncreaseScore;
+    public int playerIndex;
+
     bool isPlayingFlySound = false;
 
     private void Awake() {
         anim = GetComponent<Animator>();
         body = GetComponent<Rigidbody2D>();
         audioSource = GetComponent<AudioSource>();
+    }
+
+    public void Initialize(int index)
+    {
+        playerIndex = index;
     }
 
     public void SetInputVariables(PlayerInput input)

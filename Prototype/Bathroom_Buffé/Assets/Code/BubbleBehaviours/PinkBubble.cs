@@ -11,6 +11,9 @@ public class PinkBubble : BubbleBehaviour
 
     public override void OnShot(GameObject thisGO, GameObject shotByGO)
     {
+        FlyController controller = shotByGO.GetComponent<Projectile>().controller;
+        controller?.OnIncreaseScore(controller.playerIndex, 5);
+
         // Drop power up
         Destroy(thisGO);
     }
@@ -21,8 +24,7 @@ public class PinkBubble : BubbleBehaviour
         if (controller)
         {
             controller.flightSpeedVariable = slowDownVariable;
-            Debug.Log("Slowed speed to: " + controller.flightSpeedVariable.value);
-            collidedWithGO.GetComponent<FlyController>().StartCoroutine(ResetSpeed(controller)); 
+            collidedWithGO.GetComponent<FlyController>().StartCoroutine(ResetSpeed(controller));
         }
     }
 
@@ -30,6 +32,5 @@ public class PinkBubble : BubbleBehaviour
     {
         yield return new WaitForSeconds(slowDownDuration);
         controller.flightSpeedVariable = defaultFlySpeed;
-        Debug.Log("Reset speed to: " + controller.flightSpeedVariable.value);
     }
 }
