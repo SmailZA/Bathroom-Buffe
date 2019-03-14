@@ -4,24 +4,29 @@ using UnityEngine;
 
 [RequireComponent(typeof(Animator))]
 [RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent(typeof(AudioSource))]
 public class FlyController : MonoBehaviour
 {
     Animator anim;
     Rigidbody2D body;
+    AudioSource audioSource;
 
     bool flightInput = false;
     bool shootInput = false;
     float rotationValue;
 
-    public float rotationSpeed = 5f;
-    public float flightSpeed = 10f;
+    public FloatVariable rotationSpeedVariable;
+    public FloatVariable flightSpeedVariable;
 
-    public delegate void OnFireProjectileDelegate(Vector3 location, Quaternion rotation);
+    public delegate void OnFireProjectileDelegate(FlyController flyController);
     public OnFireProjectileDelegate OnFireProjectile;
+
+    bool isPlayingFlySound = false;
 
     private void Awake() {
         anim = GetComponent<Animator>();
         body = GetComponent<Rigidbody2D>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     public void SetInputVariables(PlayerInput input)
@@ -41,6 +46,8 @@ public class FlyController : MonoBehaviour
         {
             rotationValue = 0f;
         }
+
+        rotationValue = Input.GetAxis("Horizontal");
     }
 
     public void SteerFly()
@@ -48,7 +55,7 @@ public class FlyController : MonoBehaviour
         if (rotationValue != 0)
         {
             body.freezeRotation = false;
-            float torque = rotationValue * rotationSpeed;
+            float torque = rotationValue * rotationSpeedVariable.value;
             body.MoveRotation(body.rotation + -torque);
         }
         else
@@ -58,18 +65,40 @@ public class FlyController : MonoBehaviour
 
         if (flightInput)
         {
-            Vector2 forceDirection = transform.up * flightSpeed;
+            if (!isPlayingFlySound)
+            {
+                audioSource.Play();
+            }
+            Vector2 forceDirection = transform.up * flightSpeedVariable.value;
             body.AddForce(forceDirection);
+        }
+        else
+        {
+            audioSource.Stop();
         }
 
         if (shootInput)
         {
-            OnFireProjectile?.Invoke(transform.position, transform.rotation);
+            OnFireProjectile?.Invoke(this);
         }
     }
 
     public void AnimateFly()
     {
         anim.SetBool("IsFlying", flightInput);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject != this)
+        {
+            Bubble collidedBubble = collision.GetComponent<Bubble>();
+            if (collidedBubble)
+            {
+                BubbleBehaviour collidedBehaviour;
+                collidedBehaviour = collidedBubble.type.bubbleBehaviour;
+                collidedBehaviour?.OnCollided(collision.gameObject, gameObject);
+            }
+        }
     }
 }

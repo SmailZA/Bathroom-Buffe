@@ -39,5 +39,7 @@ public class BubbleSpawner : MonoBehaviour
         GameObject newBubbleGO = Instantiate(bubblePrefab, randomPosition, Quaternion.identity);
         Bubble newBubble = newBubbleGO.GetComponent<Bubble>();
         newBubble.Initialize(bubbles[Random.Range(0, bubbles.Count)]);
+
+        newBubble.behaviour = newBubble.type.bubbleBehaviour;
     }
 }

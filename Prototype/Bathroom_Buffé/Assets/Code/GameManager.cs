@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(ProjectileSystem))]
+[RequireComponent(typeof(AudioPlayer))]
 public class GameManager : MonoBehaviour
 {
     public GameObject flyPrefab;
@@ -13,12 +14,14 @@ public class GameManager : MonoBehaviour
 
     ProjectileSystem projectileSystem;
     BubbleSpawner bubbleSpawner;
+    AudioPlayer audioPlayer;
 
     private void Awake()
     {
         projectileSystem = GetComponent<ProjectileSystem>();
         // String reference (finding gameobject BubbleSpawner) dangerous because might be wrong
         bubbleSpawner = GameObject.Find("BubbleSpawner").GetComponent<BubbleSpawner>();
+        audioPlayer = GetComponent<AudioPlayer>();
     }
 
     void Start()
@@ -46,6 +49,7 @@ public class GameManager : MonoBehaviour
 
             // Subscribe to events here
             newPlayer.controller.OnFireProjectile += projectileSystem.SpawnProjectile;
+            newPlayer.controller.OnFireProjectile += audioPlayer.PlayFlyShootSound;
         }
     }
 

@@ -9,4 +9,5 @@ public class BubbleType : ScriptableObject
     public int score;
     public float speed;
 
+    public BubbleBehaviour bubbleBehaviour;
 }

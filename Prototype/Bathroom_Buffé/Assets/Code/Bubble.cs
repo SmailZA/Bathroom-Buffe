@@ -7,6 +7,7 @@ using UnityEngine;
 public class Bubble : MonoBehaviour
 {
     public BubbleType type;
+    public BubbleBehaviour behaviour;
 
     Rigidbody2D body;
     SpriteRenderer spriteRenderer;

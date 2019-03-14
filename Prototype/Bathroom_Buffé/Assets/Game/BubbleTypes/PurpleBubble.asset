@@ -15,3 +15,4 @@ MonoBehaviour:
   sprite: {fileID: 21300020, guid: 180029628ad0d254f8a1070422eba91c, type: 3}
   score: 20
   speed: 10
+  bubbleBehaviour: {fileID: 11400000, guid: f0278f3f4e3800640a818bc5e23ea794, type: 2}

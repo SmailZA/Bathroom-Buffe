@@ -9,4 +9,7 @@ public class PlayerInput : ScriptableObject
     public KeyCode shootInputbutton;
     public KeyCode rotateLeftButton;
     public KeyCode rotateRightButton;
+
+    public string horizontalAxis;
+    public string verticalAxis;
 }

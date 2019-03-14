@@ -16,20 +16,23 @@ public class ProjectileSystem : MonoBehaviour
         }
     }
 
-    public void SpawnProjectile(Vector3 position, Quaternion rotation)
+    public void SpawnProjectile(FlyController flyController)
     {
-        GameObject newProjectileGO = Instantiate(projectilePrefab, position, rotation);
+        GameObject newProjectileGO = Instantiate(projectilePrefab, flyController.transform.position, flyController.transform.rotation);
         Projectile newProjectile = newProjectileGO.GetComponent<Projectile>();
 
         if (newProjectile)
         {
             projectiles.Add(newProjectile);
-            newProjectile.Launch();
+            newProjectile.Launch(flyController);
+
+            newProjectile.OnDestroyProjectile += RemoveProjectile;
         }
     }
 
-    public void RemoveProjectile()
+    public void RemoveProjectile(Projectile projectile)
     {
-
+        projectiles.Remove(projectile);
+        Destroy(projectile.gameObject);
     }
 }
