@@ -12,3 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd132d32fbe836a429ee4a1b733691b7, type: 3}
   m_Name: PinkBubbleBehaviour
   m_EditorClassIdentifier: 
+  slowDownDuration: 2
+  slowDownVariable: {fileID: 11400000, guid: 62e8da73e590f4e4e8c61a73d2de7161, type: 2}

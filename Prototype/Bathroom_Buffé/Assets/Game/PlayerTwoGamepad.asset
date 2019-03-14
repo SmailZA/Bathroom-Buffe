@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70201ef597b73be42aeea3a542f6fadf, type: 3}
   m_Name: PlayerTwoGamepad
   m_EditorClassIdentifier: 
-  flightInputButton: 330
-  shootInputbutton: 331
-  rotateLeftButton: 334
-  rotateRightButton: 335
-  horizontalAxis: Horizontal
-  verticalAxis: Vertical
+  flightInputButton: 350
+  shootInputbutton: 0
+  rotateLeftButton: 0
+  rotateRightButton: 0
+  horizontalAxis: Horizontal2
+  verticalAxis: Vertical2

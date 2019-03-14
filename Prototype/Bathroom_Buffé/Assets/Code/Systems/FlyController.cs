@@ -14,6 +14,7 @@ public class FlyController : MonoBehaviour
     bool flightInput = false;
     bool shootInput = false;
     float rotationValue;
+    Vector2 lookDirection;
 
     public FloatVariable rotationSpeedVariable;
     public FloatVariable flightSpeedVariable;
@@ -47,20 +48,28 @@ public class FlyController : MonoBehaviour
             rotationValue = 0f;
         }
 
+        lookDirection = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
+
         rotationValue = Input.GetAxis("Horizontal");
     }
 
     public void SteerFly()
     {
-        if (rotationValue != 0)
+        //         if (rotationValue != 0)
+        //         {
+        //             body.freezeRotation = false;
+        //             float torque = rotationValue * rotationSpeedVariable.value;
+        //             body.MoveRotation(body.rotation + -torque);
+        //         }
+        //         else
+        //         {
+        //             body.freezeRotation = true;
+        //         }
+
+        if (lookDirection != Vector2.zero)
         {
-            body.freezeRotation = false;
-            float torque = rotationValue * rotationSpeedVariable.value;
-            body.MoveRotation(body.rotation + -torque);
-        }
-        else
-        {
-            body.freezeRotation = true;
+            float angle = Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.AngleAxis(angle - 90, Vector3.forward);
         }
 
         if (flightInput)
