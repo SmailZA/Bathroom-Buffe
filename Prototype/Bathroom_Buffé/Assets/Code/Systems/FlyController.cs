@@ -69,7 +69,6 @@ public class FlyController : MonoBehaviour
         if (lookDirection != Vector2.zero)
         {
             float angle = Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg;
-            Debug.Log("lookDirection: " + lookDirection + "angle: " + angle);
             transform.rotation = Quaternion.AngleAxis(angle - 90, Vector3.forward);
         }
 

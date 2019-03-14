@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flightInputButton: 330
   shootInputbutton: 331
-  rotateLeftButton: 334
-  rotateRightButton: 335
+  rotateLeftButton: 0
+  rotateRightButton: 0
   horizontalAxis: Horizontal
   verticalAxis: Vertical
