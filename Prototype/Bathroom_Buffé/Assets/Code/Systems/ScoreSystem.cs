@@ -13,7 +13,6 @@ public class ScoreSystem : MonoBehaviour
 
     public void AddScoreVariable(int playerIndex)
     {
-        Debug.Log("AddScoreVariable");
         //scores =  new List<ScoreVariable>();
         ScoreVariable newScoreVariable = new ScoreVariable();
         //newScoreVariable.playerIndex = playerIndex;
@@ -29,9 +28,7 @@ public class ScoreSystem : MonoBehaviour
 
         public void IncreaseScore(int amount)
         {
-            Debug.Log("Score before: " + score + " add amount: " + amount);
             score += amount;
-            Debug.Log("Total score after add: " + score);
         }
     }
 
