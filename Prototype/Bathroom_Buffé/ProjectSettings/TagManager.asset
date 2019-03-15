@@ -41,3 +41,15 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Background Wall
+    uniqueID: 3770887391
+    locked: 0
+  - name: Background Water
+    uniqueID: 3799724349
+    locked: 0
+  - name: Background Body
+    uniqueID: 1769987617
+    locked: 0
+  - name: 'Background Head '
+    uniqueID: 4177762703
+    locked: 0
