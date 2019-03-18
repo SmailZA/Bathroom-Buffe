@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: PlayerOneInput
   m_EditorClassIdentifier: 
   flightInputButton: 119
-  shootInputbutton: 102
+  shootInputbutton: 32
   rotateLeftButton: 97
   rotateRightButton: 100
   horizontalAxis: 

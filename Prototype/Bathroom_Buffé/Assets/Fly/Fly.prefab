@@ -138,9 +138,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotationSpeedVariable: {fileID: 11400000, guid: 82dcc72b4c21b6447b3ceeaa658d8edc,
     type: 2}
+  defaultFlightSpeedVariable: {fileID: 11400000, guid: 4473a5f6d2a2fef468eeb4b6bcc8ed78,
+    type: 2}
   flightSpeedVariable: {fileID: 11400000, guid: 4473a5f6d2a2fef468eeb4b6bcc8ed78,
     type: 2}
   playerIndex: 0
+  slowDownDuration: 0
+  slowDownVariable: {fileID: 11400000, guid: 62e8da73e590f4e4e8c61a73d2de7161, type: 2}
 --- !u!58 &3265411265572583033
 CircleCollider2D:
   m_ObjectHideFlags: 0
