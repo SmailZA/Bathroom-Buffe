@@ -415,7 +415,7 @@ GameObject:
   - component: {fileID: 108377279}
   - component: {fileID: 108377278}
   m_Layer: 5
-  m_Name: Player1Image
+  m_Name: P1Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -667,7 +667,7 @@ GameObject:
   - component: {fileID: 205003363}
   - component: {fileID: 205003362}
   m_Layer: 5
-  m_Name: Player3Image
+  m_Name: P3Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -741,7 +741,7 @@ GameObject:
   - component: {fileID: 425875734}
   - component: {fileID: 425875733}
   m_Layer: 5
-  m_Name: Player4Image
+  m_Name: P4Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3135,7 +3135,7 @@ GameObject:
   - component: {fileID: 712253879}
   - component: {fileID: 712253878}
   m_Layer: 5
-  m_Name: Player2ScoreNum
+  m_Name: P2ScoreNum
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3214,7 +3214,7 @@ GameObject:
   - component: {fileID: 713860080}
   - component: {fileID: 713860079}
   m_Layer: 5
-  m_Name: Player2Image
+  m_Name: P2Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3288,7 +3288,7 @@ GameObject:
   - component: {fileID: 726240702}
   - component: {fileID: 726240701}
   m_Layer: 5
-  m_Name: Player3ScoreNum
+  m_Name: P3ScoreNum
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3367,7 +3367,7 @@ GameObject:
   - component: {fileID: 1362667556}
   - component: {fileID: 1362667555}
   m_Layer: 5
-  m_Name: Player4ScoreNum
+  m_Name: P4ScoreNum
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3714,7 +3714,7 @@ GameObject:
   - component: {fileID: 2054801832}
   - component: {fileID: 2054801831}
   m_Layer: 5
-  m_Name: Player1ScoreNum
+  m_Name: P1ScoreNum
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
