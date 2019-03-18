@@ -16,4 +16,5 @@ MonoBehaviour:
   shootInputbutton: 108
   rotateLeftButton: 105
   rotateRightButton: 112
-  horizontalAxis: Horizontal2
+  horizontalAxis: 
+  verticalAxis: 

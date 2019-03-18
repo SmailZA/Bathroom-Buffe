@@ -57,25 +57,25 @@ public class FlyController : MonoBehaviour
             rotationValue = 0f;
         }
 
-        lookDirection = new Vector2(Input.GetAxis(input.horizontalAxis), Input.GetAxis(input.verticalAxis));
+//        lookDirection = new Vector2(Input.GetAxis(input.horizontalAxis), Input.GetAxis(input.verticalAxis));
 
-        rotationValue = Input.GetAxis(input.horizontalAxis);
+        //rotationValue = Input.GetAxis(input.horizontalAxis);
 
-        Debug.Log("playerIndex: " + playerIndex + " lookDirection: " + lookDirection);
+        Debug.Log("playerIndex: " + playerIndex + " input: " + input);
     }
 
     public void SteerFly()
     {
-        //         if (rotationValue != 0)
-        //         {
-        //             body.freezeRotation = false;
-        //             float torque = rotationValue * rotationSpeedVariable.value;
-        //             body.MoveRotation(body.rotation + -torque);
-        //         }
-        //         else
-        //         {
-        //             body.freezeRotation = true;
-        //         }
+        if (rotationValue != 0)
+        {
+            body.freezeRotation = false;
+            float torque = rotationValue * rotationSpeedVariable.value;
+            body.MoveRotation(body.rotation + -torque);
+        }
+        else
+        {
+            body.freezeRotation = true;
+        }
 
         if (lookDirection != Vector2.zero)
         {

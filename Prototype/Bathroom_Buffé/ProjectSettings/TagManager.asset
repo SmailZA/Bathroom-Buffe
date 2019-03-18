@@ -53,3 +53,12 @@ TagManager:
   - name: 'Background Head '
     uniqueID: 4177762703
     locked: 0
+  - name: Fly
+    uniqueID: 3336323839
+    locked: 0
+  - name: Bubble
+    uniqueID: 3664856421
+    locked: 0
+  - name: Projectile
+    uniqueID: 3147909717
+    locked: 0
