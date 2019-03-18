@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "PlayerInput")]
+[System.Serializable]
 public class PlayerInput : ScriptableObject
 {
     public KeyCode flightInputButton;

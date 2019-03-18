@@ -6,8 +6,8 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     Rigidbody2D body;
-    [HideInInspector]
-    public FlyController controller;
+
+    [HideInInspector] public FlyController controller;
 
     public float launchSpeed = 15f;
 

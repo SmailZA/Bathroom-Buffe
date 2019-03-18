@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: PlayerTwoGamepad
   m_EditorClassIdentifier: 
   flightInputButton: 350
-  shootInputbutton: 0
+  shootInputbutton: 351
   rotateLeftButton: 0
   rotateRightButton: 0
   horizontalAxis: Horizontal2

@@ -150,7 +150,7 @@ MonoBehaviour:
     type: 3}
   playerInput:
   - {fileID: 11400000, guid: 3a54673beefe5c7429c79da98680490b, type: 2}
-  - {fileID: 11400000, guid: 9f42005144433f6459e24da281df98e8, type: 2}
+  - {fileID: 11400000, guid: 0bc3f34cc0b5ca4459f00ee609e8818c, type: 2}
   playerSpawnPositions:
   - {x: -10, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}
@@ -403,7 +403,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a194e2950c04934e820e7a7bf57f474, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scores: []
 --- !u!1 &108377276
 GameObject:
   m_ObjectHideFlags: 0

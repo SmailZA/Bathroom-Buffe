@@ -49,6 +49,7 @@ public class GameManager : MonoBehaviour
             scoreSystem.AddScoreVariable(players.Count);
 
             Player newPlayer = newPlayerGO.AddComponent<Player>();
+            Debug.Log(input);
             newPlayer.Initialize(input);
             newPlayer.controller.Initialize(players.Count);
             players.Add(newPlayer);
@@ -63,8 +64,8 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        projectileSystem?.Tick();
-        bubbleSpawner?.Tick();
+        projectileSystem.Tick();
+        bubbleSpawner.Tick();
 
         // Update each player
         foreach (Player p in players)
