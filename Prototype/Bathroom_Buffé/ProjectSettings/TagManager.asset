@@ -62,3 +62,6 @@ TagManager:
   - name: Projectile
     uniqueID: 3147909717
     locked: 0
+  - name: GridWall
+    uniqueID: 1991001827
+    locked: 0
