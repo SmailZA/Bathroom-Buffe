@@ -2,10 +2,16 @@
 
 public class BackGroundBoubleBurst : MonoBehaviour
 {
-    public int Timer = 1;
-    public int MaxTimer = 300;
+    int Timer;
+    int MaxTimer = 1000;
 
     // Update is called once per frame
+    void Start()
+    {
+        Timer = Random.Range(400, MaxTimer - 100);
+    }
+
+
     void Update()
     {
         if (Timer > MaxTimer)
