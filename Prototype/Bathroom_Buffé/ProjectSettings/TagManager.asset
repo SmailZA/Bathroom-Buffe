@@ -44,6 +44,9 @@ TagManager:
   - name: Background Wall
     uniqueID: 3770887391
     locked: 0
+  - name: Background Tub
+    uniqueID: 2830702785
+    locked: 0
   - name: Background Water
     uniqueID: 3799724349
     locked: 0
