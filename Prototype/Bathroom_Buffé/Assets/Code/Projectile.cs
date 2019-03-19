@@ -52,7 +52,6 @@ public class Projectile : MonoBehaviour
                 collidedBehaviour?.OnShot(collision.gameObject, gameObject);
             }
         }
-
         // Makes projectile system remove this from it's projectile list & destroys this
         OnDestroyProjectile?.Invoke(this);
     }

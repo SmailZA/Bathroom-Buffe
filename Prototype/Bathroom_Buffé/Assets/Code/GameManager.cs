@@ -49,7 +49,7 @@ public class GameManager : MonoBehaviour
             scoreSystem.AddScoreVariable(players.Count);
 
             Player newPlayer = newPlayerGO.AddComponent<Player>();
-            Debug.Log(input);
+            //Debug.Log(input);
             newPlayer.Initialize(input);
             newPlayer.controller.Initialize(players.Count);
             players.Add(newPlayer);
