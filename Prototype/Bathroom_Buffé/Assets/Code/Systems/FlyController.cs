@@ -119,6 +119,7 @@ public class FlyController : MonoBehaviour
 
     public void OnShot(GameObject thisGO, GameObject shotByGO)
     {
+        body.velocity = Vector3.zero;
         StartCoroutine(ResetSpeed());
     }
 
