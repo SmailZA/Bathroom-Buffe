@@ -59,7 +59,6 @@ public class Projectile : MonoBehaviour
 
             FlyController flyController = collision.GetComponent<FlyController>();
         }
-
         // Makes projectile system remove this from it's projectile list & destroys this
         OnDestroyProjectile?.Invoke(this);
     }
