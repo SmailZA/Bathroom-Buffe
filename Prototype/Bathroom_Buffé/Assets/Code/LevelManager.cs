@@ -46,8 +46,9 @@ public class LevelManager : MonoBehaviour
     public void OnBubblePopped(Projectile projectile)
     {
         currentBubblesPopped++;
-        Debug.Log(currentBubblesPopped + " / " + bubblesPoppedPerLevel[currentLevel]);
-        if (currentBubblesPopped >= bubblesPoppedPerLevel[currentLevel])
+        Debug.Log("Popped boulble");
+      //  Debug.Log(currentBubblesPopped + " / " + bubblesPoppedPerLevel[currentLevel]);
+       /* if (currentBubblesPopped >= bubblesPoppedPerLevel[currentLevel])
         {
             currentLevel++;
             if (currentLevel >= bubblesPoppedPerLevel.Length - 1)
@@ -60,7 +61,7 @@ public class LevelManager : MonoBehaviour
                 // Todo: Kasper let the level manager know a bubble has been popped.
                 // currentBubblesPopped++
             }
-        }
+        }*/
     }
 
     //[SerializeField] private float maxLevelLifeTime = 60f;

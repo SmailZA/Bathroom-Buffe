@@ -5,7 +5,7 @@ using UnityEngine;
 public class ProjectileSystem : MonoBehaviour
 {
     public GameObject projectilePrefab;
-
+    [SerializeField] private LevelManager _levelManager;
     [SerializeField] List<Projectile> projectiles = new List<Projectile>();
 
     public void Tick()
@@ -24,7 +24,7 @@ public class ProjectileSystem : MonoBehaviour
         if (newProjectile)
         {
             projectiles.Add(newProjectile);
-            newProjectile.Launch(flyController);
+            newProjectile.Launch(flyController, _levelManager);
 
             newProjectile.OnDestroyProjectile += RemoveProjectile;
         }

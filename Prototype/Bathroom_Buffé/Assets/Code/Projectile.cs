@@ -14,16 +14,19 @@ public class Projectile : MonoBehaviour
     public delegate void OnDestroyProjectileDelegate(Projectile projectile);
     public OnDestroyProjectileDelegate OnDestroyProjectile;
 
+    LevelManager _levelManager;
+
     private void Awake()
     {
         body = GetComponent<Rigidbody2D>();
+ 
     }
 
-    public void Launch(FlyController flyController)
+    public void Launch(FlyController flyController, LevelManager levelManager)
     {
         controller = flyController;
         Vector2 forceDirection = (transform.up * launchSpeed);
-
+        _levelManager = levelManager;
         // I've heard rumors that setting velocity directly is not good, I don't care, maybe you should
         body.velocity = forceDirection;
     }
@@ -53,6 +56,7 @@ public class Projectile : MonoBehaviour
             BubbleBehaviour collidedBehaviour;
             if (collidedBubble)
             {
+                _levelManager.OnBubblePopped(this);
                 collidedBehaviour = collidedBubble.type.bubbleBehaviour;
                 collidedBehaviour?.OnShot(collision.gameObject, gameObject);
             }
