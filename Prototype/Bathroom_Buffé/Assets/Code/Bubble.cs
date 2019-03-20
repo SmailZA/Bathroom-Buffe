@@ -36,4 +36,9 @@ public class Bubble : MonoBehaviour
         body.AddForce(newPosition);
         //body.MovePosition(newPosition * Time.deltaTime);
     }
+
+    private void OnBecameInvisible()
+    {
+        Destroy(gameObject);
+    }
 }

@@ -17,7 +17,8 @@ public class FlyController : MonoBehaviour
     Vector2 lookDirection;
 
     public FloatVariable rotationSpeedVariable;
-    public FloatVariable flightSpeedVariable;
+    public FloatVariable defaultFlightSpeedVariable;
+    [HideInInspector] public FloatVariable flightSpeedVariable;
 
     public delegate void OnFireProjectileDelegate(FlyController flyController);
     public OnFireProjectileDelegate OnFireProjectile;
@@ -37,6 +38,7 @@ public class FlyController : MonoBehaviour
     public void Initialize(int index)
     {
         playerIndex = index;
+        flightSpeedVariable = defaultFlightSpeedVariable;
     }
 
     public void SetInputVariables(PlayerInput input)
@@ -57,11 +59,15 @@ public class FlyController : MonoBehaviour
             rotationValue = 0f;
         }
 
-//        lookDirection = new Vector2(Input.GetAxis(input.horizontalAxis), Input.GetAxis(input.verticalAxis));
+        //lookDirection = new Vector2(Input.GetAxis(input.horizontalAxis), Input.GetAxis(input.verticalAxis));
 
         //rotationValue = Input.GetAxis(input.horizontalAxis);
+<<<<<<< HEAD
 
+        Debug.Log("playerIndex: " + playerIndex + " input: " + input);
         //Debug.Log("playerIndex: " + playerIndex + " input: " + input);
+=======
+>>>>>>> a05643dbafafaab947a3198ce6ec60bd2b52f561
     }
 
     public void SteerFly()
@@ -106,6 +112,30 @@ public class FlyController : MonoBehaviour
     public void AnimateFly()
     {
         anim.SetBool("IsFlying", flightInput);
+    }
+
+    public float slowDownDuration;
+    public FloatVariable slowDownVariable;
+
+    public void OnShot(GameObject thisGO, GameObject shotByGO)
+    {
+        StartCoroutine(ResetSpeed());
+    }
+
+    public void OnCollided(GameObject thisGO, GameObject collidedWithGO)
+    {
+        FlyController controller = collidedWithGO.GetComponent<FlyController>();
+        if (controller)
+        {
+            flightSpeedVariable = slowDownVariable;
+            StartCoroutine(ResetSpeed());
+        }
+    }
+
+    IEnumerator ResetSpeed()
+    {
+        yield return new WaitForSeconds(slowDownDuration);
+        flightSpeedVariable = defaultFlightSpeedVariable;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

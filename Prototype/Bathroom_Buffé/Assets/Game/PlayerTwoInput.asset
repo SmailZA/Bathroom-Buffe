@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70201ef597b73be42aeea3a542f6fadf, type: 3}
   m_Name: PlayerTwoInput
   m_EditorClassIdentifier: 
-  flightInputButton: 111
-  shootInputbutton: 108
-  rotateLeftButton: 105
-  rotateRightButton: 112
+  flightInputButton: 105
+  shootInputbutton: 13
+  rotateLeftButton: 106
+  rotateRightButton: 108
   horizontalAxis: 
   verticalAxis: 

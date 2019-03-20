@@ -42,6 +42,11 @@ public class Projectile : MonoBehaviour
             return;
         }
 
+        if (collision.GetComponent<Projectile>())
+        {
+            return;
+        }
+
         if (collision.gameObject != this)
         {
             Bubble collidedBubble = collision.GetComponent<Bubble>();
@@ -51,6 +56,8 @@ public class Projectile : MonoBehaviour
                 collidedBehaviour = collidedBubble.type.bubbleBehaviour;
                 collidedBehaviour?.OnShot(collision.gameObject, gameObject);
             }
+
+            FlyController flyController = collision.GetComponent<FlyController>();
         }
         // Makes projectile system remove this from it's projectile list & destroys this
         OnDestroyProjectile?.Invoke(this);

@@ -1,0 +1,9 @@
+diff a/Prototype/Bathroom_Buffé/Assets/Code/Systems/FlyController.cs b/Prototype/Bathroom_Buffé/Assets/Code/Systems/FlyController.cs	(rejected hunks)
+@@ -61,7 +61,6 @@
+ 
+         //rotationValue = Input.GetAxis(input.horizontalAxis);
+ 
+-        Debug.Log("playerIndex: " + playerIndex + " input: " + input);
+         //Debug.Log("playerIndex: " + playerIndex + " input: " + input);
+     }
+ 
