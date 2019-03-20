@@ -434,8 +434,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd0cd766e38c21240ab5d5fff3ae1d99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Timer: 200
-  MaxTimer: 300
 --- !u!95 &31504472
 Animator:
   serializedVersion: 3
@@ -548,8 +546,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd0cd766e38c21240ab5d5fff3ae1d99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Timer: 200
-  MaxTimer: 300
 --- !u!95 &90696164
 Animator:
   serializedVersion: 3
@@ -909,8 +905,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd0cd766e38c21240ab5d5fff3ae1d99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Timer: 200
-  MaxTimer: 300
 --- !u!95 &249900358
 Animator:
   serializedVersion: 3
@@ -1023,8 +1017,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd0cd766e38c21240ab5d5fff3ae1d99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Timer: 200
-  MaxTimer: 300
 --- !u!95 &301094407
 Animator:
   serializedVersion: 3
@@ -1137,8 +1129,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd0cd766e38c21240ab5d5fff3ae1d99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Timer: 200
-  MaxTimer: 300
 --- !u!95 &358956178
 Animator:
   serializedVersion: 3
@@ -1350,8 +1340,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd0cd766e38c21240ab5d5fff3ae1d99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Timer: 200
-  MaxTimer: 300
 --- !u!95 &409385306
 Animator:
   serializedVersion: 3
@@ -1538,8 +1526,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd0cd766e38c21240ab5d5fff3ae1d99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Timer: 200
-  MaxTimer: 300
 --- !u!95 &435769822
 Animator:
   serializedVersion: 3
@@ -4204,8 +4190,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd0cd766e38c21240ab5d5fff3ae1d99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Timer: 200
-  MaxTimer: 300
 --- !u!95 &747018079
 Animator:
   serializedVersion: 3
@@ -4318,8 +4302,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd0cd766e38c21240ab5d5fff3ae1d99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Timer: 200
-  MaxTimer: 300
 --- !u!95 &757788734
 Animator:
   serializedVersion: 3
@@ -4432,8 +4414,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd0cd766e38c21240ab5d5fff3ae1d99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Timer: 200
-  MaxTimer: 300
 --- !u!95 &783781198
 Animator:
   serializedVersion: 3
@@ -4546,8 +4526,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd0cd766e38c21240ab5d5fff3ae1d99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Timer: 200
-  MaxTimer: 300
 --- !u!95 &852578927
 Animator:
   serializedVersion: 3
@@ -4660,8 +4638,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd0cd766e38c21240ab5d5fff3ae1d99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Timer: 200
-  MaxTimer: 300
 --- !u!95 &966202442
 Animator:
   serializedVersion: 3
@@ -4873,8 +4849,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd0cd766e38c21240ab5d5fff3ae1d99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Timer: 200
-  MaxTimer: 300
 --- !u!95 &1156018092
 Animator:
   serializedVersion: 3
@@ -4987,8 +4961,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd0cd766e38c21240ab5d5fff3ae1d99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Timer: 200
-  MaxTimer: 300
 --- !u!95 &1176834552
 Animator:
   serializedVersion: 3
@@ -5180,8 +5152,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd0cd766e38c21240ab5d5fff3ae1d99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Timer: 200
-  MaxTimer: 300
 --- !u!95 &1368963301
 Animator:
   serializedVersion: 3
@@ -5273,6 +5243,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1373101256}
   - component: {fileID: 1373101255}
+  - component: {fileID: 1373101257}
   m_Layer: 0
   m_Name: fog4
   m_TagString: Untagged
@@ -5342,6 +5313,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 32
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1373101257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1373101254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d38f7dc0a91bf674e9533156d36644a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  min: 2
+  max: 3
 --- !u!1 &1416059857
 GameObject:
   m_ObjectHideFlags: 0
@@ -5373,8 +5358,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd0cd766e38c21240ab5d5fff3ae1d99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Timer: 200
-  MaxTimer: 300
 --- !u!95 &1416059859
 Animator:
   serializedVersion: 3
@@ -5487,8 +5470,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd0cd766e38c21240ab5d5fff3ae1d99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Timer: 200
-  MaxTimer: 300
 --- !u!95 &1488933090
 Animator:
   serializedVersion: 3
@@ -5869,8 +5850,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd0cd766e38c21240ab5d5fff3ae1d99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Timer: 200
-  MaxTimer: 300
 --- !u!95 &1690299170
 Animator:
   serializedVersion: 3
@@ -6064,8 +6043,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd0cd766e38c21240ab5d5fff3ae1d99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Timer: 200
-  MaxTimer: 300
 --- !u!1 &1924566900
 GameObject:
   m_ObjectHideFlags: 0
@@ -6097,8 +6074,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd0cd766e38c21240ab5d5fff3ae1d99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Timer: 200
-  MaxTimer: 300
 --- !u!95 &1924566902
 Animator:
   serializedVersion: 3
@@ -6290,8 +6265,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd0cd766e38c21240ab5d5fff3ae1d99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Timer: 200
-  MaxTimer: 300
 --- !u!95 &2063970895
 Animator:
   serializedVersion: 3
