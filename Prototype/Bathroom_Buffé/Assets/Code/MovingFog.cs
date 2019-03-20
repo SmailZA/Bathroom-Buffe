@@ -11,7 +11,5 @@ public class MovingFog : MonoBehaviour
     private void Update()
     {
         transform.position = new Vector3(Mathf.PingPong(Time.time * timeCounter, max - min) + min, transform.position.y);
-
-       
     }
 }

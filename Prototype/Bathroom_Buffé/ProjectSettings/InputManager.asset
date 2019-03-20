@@ -310,7 +310,7 @@ InputManager:
     axis: 0
     joyNum: 2
   - serializedVersion: 3
-    m_Name: Vertical2
+    m_Name: 
     descriptiveName: 
     descriptiveNegativeName: 
     negativeButton: 
