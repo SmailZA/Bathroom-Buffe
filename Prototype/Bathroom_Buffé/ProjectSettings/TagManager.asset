@@ -53,9 +53,6 @@ TagManager:
   - name: Background Body
     uniqueID: 1769987617
     locked: 0
-  - name: Fog
-    uniqueID: 4134529147
-    locked: 0
   - name: 'Background Head '
     uniqueID: 4177762703
     locked: 0

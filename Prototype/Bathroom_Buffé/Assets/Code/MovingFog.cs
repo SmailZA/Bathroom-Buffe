@@ -4,13 +4,18 @@ using UnityEngine;
 
 public class MovingFog : MonoBehaviour
 {
-    public float min = -5f;
-    public float max = -1f;
-    public float timeCounter = 1f;
+    public float min = 1f;
+    public float max = 2f;
 
-    public void Update()
+    void Start()
     {
+        min = transform.position.x;
+        max = transform.position.x + 2;
+    }
+    private void Update()
+    {
+        transform.position = new Vector3(Mathf.PingPong(Time.time * 1, max - min) + min, transform.position.y);
 
-        transform.position = new Vector3(Mathf.PingPong(Time.time * timeCounter, max - min) + min, transform.position.y);
+       
     }
 }
