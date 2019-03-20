@@ -44,6 +44,12 @@ TagManager:
   - name: Background Wall
     uniqueID: 3770887391
     locked: 0
+  - name: Fog4
+    uniqueID: 72582543
+    locked: 0
+  - name: Fog3
+    uniqueID: 1765856867
+    locked: 0
   - name: Background Tub
     uniqueID: 2830702785
     locked: 0
@@ -55,6 +61,12 @@ TagManager:
     locked: 0
   - name: 'Background Head '
     uniqueID: 4177762703
+    locked: 0
+  - name: Fog2
+    uniqueID: 1574507711
+    locked: 0
+  - name: Fog1
+    uniqueID: 379540879
     locked: 0
   - name: Fly
     uniqueID: 3336323839
