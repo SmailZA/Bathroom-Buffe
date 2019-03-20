@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(InputSystem))]
 [RequireComponent(typeof(ProjectileSystem))]
 [RequireComponent(typeof(ScoreSystem))]
 [RequireComponent(typeof(AudioPlayer))]
@@ -12,7 +13,8 @@ public class GameManager : MonoBehaviour
     public List<Vector3> playerSpawnPositions = new List<Vector3>();
 
     List<Player> players = new List<Player>();
-    
+
+    InputSystem inputSystem;
     ProjectileSystem projectileSystem;
     BubbleSpawner bubbleSpawner;
     ScoreSystem scoreSystem;
@@ -20,8 +22,10 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
+        inputSystem = GetComponent<InputSystem>();
         projectileSystem = GetComponent<ProjectileSystem>();
-        // String reference (finding gameobject BubbleSpawner) dangerous because might be wrong
+
+        // String reference (finding gameobject BubbleSpawner) dangerous because string might be wrong
         bubbleSpawner = GameObject.Find("BubbleSpawner").GetComponent<BubbleSpawner>();
         scoreSystem = GetComponent<ScoreSystem>();
         audioPlayer = GetComponent<AudioPlayer>();
@@ -63,6 +67,7 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
+
         projectileSystem.Tick();
         bubbleSpawner.Tick();
 
