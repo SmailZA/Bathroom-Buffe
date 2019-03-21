@@ -19,6 +19,8 @@ public class LevelManager : MonoBehaviour
 
     private float levelStartTime;
 
+   static int totalScore = 0;
+
     private void Start()
     {
         StartCoroutine(CountDownTimer());
@@ -52,7 +54,7 @@ public class LevelManager : MonoBehaviour
             currentLevel++;
             if (currentLevel >= bubblesPoppedPerLevel.Length - 1)
             {
-                // Todo: Load new scene
+               
             }
             else
             {
@@ -61,6 +63,11 @@ public class LevelManager : MonoBehaviour
                 // currentBubblesPopped++
             }
         }
+    }
+
+    public static void AddToScore(int scorePoint)
+    {
+        totalScore += scorePoint;
     }
 
     //[SerializeField] private float maxLevelLifeTime = 60f;
