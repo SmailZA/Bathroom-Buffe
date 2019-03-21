@@ -12,6 +12,8 @@ public class GameManager : MonoBehaviour
     public List<PlayerInput> playerInput = new List<PlayerInput>();
     public List<Vector3> playerSpawnPositions = new List<Vector3>();
 
+    public GameObject[] flyPrefabs = new GameObject[4];
+
     List<Player> players = new List<Player>();
 
     InputSystem inputSystem;
@@ -58,12 +60,12 @@ public class GameManager : MonoBehaviour
         // Spawn at selected position
         if (playerSpawnPositions.Count >= spawnPositionIndex)
         {
-            newPlayerGO = Instantiate(flyPrefab, playerSpawnPositions[spawnPositionIndex], Quaternion.identity);
+            newPlayerGO = Instantiate(flyPrefabs[players.Count], playerSpawnPositions[spawnPositionIndex], Quaternion.identity);
             spawnPositionIndex++;
         }
         else // Probably spawns at prefab default position, flies might end up on top of eachother
         {
-            newPlayerGO = Instantiate(flyPrefab);
+            newPlayerGO = Instantiate(flyPrefabs[players.Count]);
         }
 
         scoreSystem.AddScoreVariable(players.Count);

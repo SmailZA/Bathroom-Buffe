@@ -48,5 +48,6 @@ public class ScoreSystem : MonoBehaviour
     public void IncreaseScore(int playerIndex, int scoreToAdd)
     {
         scores[playerIndex].IncreaseScore(scoreToAdd);
+        scoreGOs[playerIndex].GetComponent<Text>().text = scores[playerIndex].score.ToString();
     }
 }
