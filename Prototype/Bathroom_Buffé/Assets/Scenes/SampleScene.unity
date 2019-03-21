@@ -1261,6 +1261,7 @@ GameObject:
   - component: {fileID: 235446372}
   - component: {fileID: 235446374}
   - component: {fileID: 235446373}
+  - component: {fileID: 235446375}
   m_Layer: 0
   m_Name: Text (1)
   m_TagString: Untagged
@@ -1308,12 +1309,12 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 150
+    m_Font: {fileID: 12800000, guid: 922b51a28c45b204396f2c53f98aeee4, type: 3}
+    m_FontSize: 200
     m_FontStyle: 2
     m_BestFit: 1
     m_MinSize: 1
-    m_MaxSize: 150
+    m_MaxSize: 200
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -1329,6 +1330,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 235446371}
   m_CullTransparentMesh: 0
+--- !u!114 &235446375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 235446371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a298030fd9da9f4fbb668129b0ef468, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bubblesPoppedPerLevel: 
+  timerLabel: {fileID: 235446373}
+  timeUntilLevelStart: 3
 --- !u!1 &249900356
 GameObject:
   m_ObjectHideFlags: 0
@@ -2388,19 +2404,19 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 150
+    m_Font: {fileID: 12800000, guid: 922b51a28c45b204396f2c53f98aeee4, type: 3}
+    m_FontSize: 200
     m_FontStyle: 0
     m_BestFit: 1
     m_MinSize: 0
-    m_MaxSize: 150
+    m_MaxSize: 200
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Wave Starteing in '
+  m_Text: 'Wave Starting In '
 --- !u!222 &520634649
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2499,7 +2515,6 @@ GameObject:
   - component: {fileID: 635868855}
   - component: {fileID: 635868857}
   - component: {fileID: 635868856}
-  - component: {fileID: 635868858}
   m_Layer: 5
   m_Name: TimeRemaning
   m_TagString: Untagged
@@ -2523,8 +2538,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 731.6, y: -332.7}
-  m_SizeDelta: {x: 178.7, y: 80.5}
+  m_AnchoredPosition: {x: 770.5, y: -338.6}
+  m_SizeDelta: {x: 256.5, y: 92.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &635868856
 MonoBehaviour:
@@ -2547,7 +2562,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 922b51a28c45b204396f2c53f98aeee4, type: 3}
     m_FontSize: 60
     m_FontStyle: 0
     m_BestFit: 0
@@ -2559,7 +2574,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: New
 --- !u!222 &635868857
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2568,21 +2583,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 635868854}
   m_CullTransparentMesh: 0
---- !u!114 &635868858
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 635868854}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a298030fd9da9f4fbb668129b0ef468, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bubblesPoppedPerLevel: 
-  timerLabel: {fileID: 635868856}
-  timeUntilLevelStart: 0
 --- !u!1 &636689971
 GameObject:
   m_ObjectHideFlags: 0
