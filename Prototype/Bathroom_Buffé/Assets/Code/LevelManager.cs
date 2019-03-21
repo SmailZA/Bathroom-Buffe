@@ -10,9 +10,14 @@ public class LevelManager : MonoBehaviour
     public int[] bubblesPoppedPerLevel;
     public Text timerLabel;
 
+    public BubbleSpawner bubbleSpawner;
+
+    public Text currentLevelText;
+
     public float timeUntilLevelStart = 3f;
 
     private int currentLevel = 0;
+    private int actuallyCurrentLevel = 1;
     public static int currentBubblesPopped = 0;
     private int bubblesPerLvl = 10;
     private float timeStart = 0f;
@@ -77,7 +82,7 @@ public class LevelManager : MonoBehaviour
     }
     private void StartPlay()
     {
-
+        timeTilEnd = CurrentMaxTime;
         CanPlay = true;
         this.transform.parent.transform.GetChild(0).gameObject.GetComponent<Text>().enabled = false;
         //timerLabel.gameObject.SetActive(false);
@@ -149,7 +154,19 @@ public class LevelManager : MonoBehaviour
             CurrentMaxTime += 10;
             bubblesPerLvl += 10;
             currentBubblesPopped = 0;
-
+            actuallyCurrentLevel++;
+            currentLevelText.text = actuallyCurrentLevel.ToString(); 
+            if (bubbleSpawner)
+            {
+                bubbleSpawner.spawnInterval -= 0.1f;
+                bubbleSpawner.spawnInterval = Mathf.Clamp(bubbleSpawner.spawnInterval, 0.2f, 1);
+            }
+            else
+            {
+                Debug.Log("You have encountered a grotesque error! Please assign BubbleSpawner to field in this object");
+            }
+            CancelInvoke("EndGame");
+            Invoke("EndGame", timeTilEnd);
             StartCoroutine(CountDownTimer());
         }
     //    levelTimeElapsed += Time.deltaTime;

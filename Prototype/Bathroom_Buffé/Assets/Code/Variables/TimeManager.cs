@@ -7,7 +7,7 @@ public class TimeManager : MonoBehaviour
 {
 
     float timeStart = 0f;
-    public float timeTilEnd = 60f;
+    public float timeTilEnd = 1f;
 
 
     public void Start()

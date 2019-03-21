@@ -14,7 +14,7 @@ public class BubbleSpawner : MonoBehaviour
 
     public float spawnInterval = 1f;
 
-    float spawnTimer = 0f;
+    double spawnTimer = 0f;
 
     private void Awake()
     {
