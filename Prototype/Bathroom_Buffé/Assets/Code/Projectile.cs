@@ -10,7 +10,7 @@ public class Projectile : MonoBehaviour
     [HideInInspector] public FlyController controller;
 
     public float launchSpeed = 15f;
-
+    int bubblescorevalue = 0;
     public delegate void OnDestroyProjectileDelegate(Projectile projectile);
     public OnDestroyProjectileDelegate OnDestroyProjectile;
 
@@ -51,10 +51,12 @@ public class Projectile : MonoBehaviour
         {
             Bubble collidedBubble = collision.GetComponent<Bubble>();
             BubbleBehaviour collidedBehaviour;
+  
             if (collidedBubble)
             {
                 collidedBehaviour = collidedBubble.type.bubbleBehaviour;
                 collidedBehaviour?.OnShot(collision.gameObject, gameObject);
+                LevelManager.AddToScore(collidedBubble.type.score);
             }
 
             FlyController flyController = collision.GetComponent<FlyController>();
