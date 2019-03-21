@@ -57,6 +57,7 @@ public class Projectile : MonoBehaviour
                 collidedBehaviour = collidedBubble.type.bubbleBehaviour;
                 collidedBehaviour?.OnShot(collision.gameObject, gameObject);
                 LevelManager.AddToScore(collidedBubble.type.score);
+                LevelManager.currentBubblesPopped++;
             }
 
             FlyController flyController = collision.GetComponent<FlyController>();
