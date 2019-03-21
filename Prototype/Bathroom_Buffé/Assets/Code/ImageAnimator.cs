@@ -26,8 +26,6 @@ public class ImageAnimator : MonoBehaviour
 
         if (currentTime > animInterval)
         {
-            Debug.Log(currentImage);
-
             if (currentImage == 0)
             {
                 currentImage++;

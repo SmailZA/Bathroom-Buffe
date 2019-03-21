@@ -441,25 +441,21 @@ RectTransform:
   m_AnchoredPosition: {x: 670, y: 3.0999756}
   m_SizeDelta: {x: 75, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!95 &29950059
-Animator:
-  serializedVersion: 3
+--- !u!114 &29950059
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 29950057}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 22ccdb4be364aff4cbb5d6d2df6495d2, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a1e485f574a624479f0a44ad208328b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  image1: {fileID: 21300000, guid: 29902e2a71abcb94abdea33d68cb9f5f, type: 3}
+  image2: {fileID: 21300002, guid: 29902e2a71abcb94abdea33d68cb9f5f, type: 3}
+  animInterval: 0.4
 --- !u!114 &29950060
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1021,7 +1017,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image1: {fileID: 21300000, guid: 29902e2a71abcb94abdea33d68cb9f5f, type: 3}
   image2: {fileID: 21300002, guid: 29902e2a71abcb94abdea33d68cb9f5f, type: 3}
-  animInterval: 0.2
+  animInterval: 0.4
 --- !u!114 &141391356
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2356,25 +2352,21 @@ RectTransform:
   m_AnchoredPosition: {x: 670, y: 203.1}
   m_SizeDelta: {x: 75, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!95 &636689973
-Animator:
-  serializedVersion: 3
+--- !u!114 &636689973
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 636689971}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 22ccdb4be364aff4cbb5d6d2df6495d2, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a1e485f574a624479f0a44ad208328b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  image1: {fileID: 21300000, guid: 29902e2a71abcb94abdea33d68cb9f5f, type: 3}
+  image2: {fileID: 21300002, guid: 29902e2a71abcb94abdea33d68cb9f5f, type: 3}
+  animInterval: 0.4
 --- !u!114 &636689974
 MonoBehaviour:
   m_ObjectHideFlags: 0
