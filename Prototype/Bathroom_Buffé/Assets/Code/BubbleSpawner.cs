@@ -7,6 +7,8 @@ public class BubbleSpawner : MonoBehaviour
 {
     BoxCollider2D boxCollider2D;
 
+    public bool spawnBubbles = true;
+
     public GameObject bubblePrefab;
     public List<BubbleType> bubbles = new List<BubbleType>();
 
@@ -21,6 +23,9 @@ public class BubbleSpawner : MonoBehaviour
 
     public void Tick()
     {
+        if (!spawnBubbles)
+            return;
+
         spawnTimer += Time.deltaTime;
 
         if (spawnTimer > spawnInterval)
