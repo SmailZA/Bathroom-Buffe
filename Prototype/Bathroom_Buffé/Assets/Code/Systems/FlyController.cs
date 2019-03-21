@@ -62,9 +62,6 @@ public class FlyController : MonoBehaviour
         //lookDirection = new Vector2(Input.GetAxis(input.horizontalAxis), Input.GetAxis(input.verticalAxis));
 
         //rotationValue = Input.GetAxis(input.horizontalAxis);
-
-        Debug.Log("playerIndex: " + playerIndex + " input: " + input);
-        //Debug.Log("playerIndex: " + playerIndex + " input: " + input);
     }
 
     public void SteerFly()
