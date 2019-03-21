@@ -1,9 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(SpriteRenderer))]
+[RequireComponent(typeof(Animator))]
 public class Bubble : MonoBehaviour
 {
     public BubbleType type;
@@ -11,11 +10,15 @@ public class Bubble : MonoBehaviour
 
     Rigidbody2D body;
     SpriteRenderer spriteRenderer;
+    Animator anim;
+
+    bool beginDestroy = false;
 
     private void Awake()
     {
         body = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        anim = GetComponent<Animator>();
     }
 
     public void Initialize(BubbleType type)
@@ -24,9 +27,25 @@ public class Bubble : MonoBehaviour
         spriteRenderer.sprite = type.sprite;
     }
 
+    public void BeginDestroy()
+    {
+        anim.SetBool("beginDestroy", true);
+        beginDestroy = true;
+    }
+
     private void Update()
     {
         Travel();
+
+        if (!beginDestroy)
+            return;
+
+        AnimatorClipInfo[] animatorClip = anim.GetCurrentAnimatorClipInfo(0);
+/*        Debug.Log(animatorClip[0].ToString());*/
+        if (animatorClip[0].ToString() == "Pop")
+        {
+
+        }
     }
 
     void Travel()
