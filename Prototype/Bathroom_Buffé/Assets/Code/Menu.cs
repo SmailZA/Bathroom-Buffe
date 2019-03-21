@@ -2,16 +2,27 @@
 using UnityEngine.SceneManagement;
 
 
+
 public class Menu : MonoBehaviour
 { 
-    public void Play( )
+    public void StartGameButton()
     {
         SceneManager.LoadScene("SampleScene");
-    }
 
-    public void Controlls()
+    }
+        public void ControlsButton()
     {
-        SceneManager.LoadScene("");
+        SceneManager.LoadScene("ControlsScene");
+       
     }
 
+    public void BackButton()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+
+    public void QuitGameButton()
+    {
+        Application.Quit();
+    }
 }
