@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 507d023ad3bef5744a8ab58db8b0ccc4
+guid: 29902e2a71abcb94abdea33d68cb9f5f
 TextureImporter:
   fileIDToRecycleName:
     21300000: T_Abutton_anim_0
@@ -33,7 +33,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: -1
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -100,7 +100,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 920292a2533c3c14d823be7fc7b1c831
+      spriteID: cb186549eae68604bb560fa6d779bfcc
       vertices: []
       indices: 
       edges: []
@@ -120,7 +120,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ef927aac4a98cfb40aa8acb069d09bc4
+      spriteID: 1a45e221599c42f43aa48a5d38fea50c
       vertices: []
       indices: 
       edges: []
@@ -128,7 +128,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: a6bd59435f1d1194596c659306987d96
+    spriteID: e2d0e8ad818c1474e8bf2a79d252dc14
     vertices: []
     indices: 
     edges: []
