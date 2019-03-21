@@ -43,14 +43,27 @@ public class FlyController : MonoBehaviour
 
     public void SetInputVariables(PlayerInput input)
     {
-        flightInput = Input.GetKey(input.flightInputButton);
-        shootInput = Input.GetKeyDown(input.shootInputbutton);
+        flightInput = Input.GetKey(input.flightInputButton) || input.flightInput;
+        shootInput = Input.GetKeyDown(input.shootInputbutton) || input.shootInput;
 
         if (Input.GetKey(input.rotateLeftButton))
         {
             rotationValue = -1f;
         }
         else if (Input.GetKey(input.rotateRightButton))
+        {
+            rotationValue = 1f;
+        }
+        else
+        {
+            rotationValue = 0f;
+        }
+
+        if (input.rotateLeft)
+        {
+            rotationValue = -1f;
+        }
+        else if (input.rotateRight)
         {
             rotationValue = 1f;
         }

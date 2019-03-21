@@ -13,6 +13,8 @@ public class Bubble : MonoBehaviour
     Animator anim;
 
     bool beginDestroy = false;
+    float destroyTime = .5f;
+    float destroyTimer = 0f;
 
     private void Awake()
     {
@@ -31,6 +33,7 @@ public class Bubble : MonoBehaviour
     {
         anim.SetBool("beginDestroy", true);
         beginDestroy = true;
+        GetComponent<CircleCollider2D>().enabled = false;
     }
 
     private void Update()
@@ -40,7 +43,15 @@ public class Bubble : MonoBehaviour
         if (!beginDestroy)
             return;
 
-        AnimatorClipInfo[] animatorClip = anim.GetCurrentAnimatorClipInfo(0);
+        destroyTimer += Time.deltaTime;
+
+        if (destroyTimer >= destroyTime)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+            AnimatorClipInfo[] animatorClip = anim.GetCurrentAnimatorClipInfo(0);
 /*        Debug.Log(animatorClip[0].ToString());*/
         if (animatorClip[0].ToString() == "Pop")
         {

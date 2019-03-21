@@ -15,7 +15,8 @@ public class PinkBubble : BubbleBehaviour
         controller?.OnIncreaseScore(controller.playerIndex, 5);
 
         // Drop power up
-        Destroy(thisGO);
+        //Destroy(thisGO);
+        thisGO.GetComponent<Bubble>().BeginDestroy();
     }
     
     public override void OnCollided(GameObject thisGO, GameObject collidedWithGO)

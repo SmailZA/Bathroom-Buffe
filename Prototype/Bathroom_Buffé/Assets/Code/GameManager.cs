@@ -20,6 +20,8 @@ public class GameManager : MonoBehaviour
     ScoreSystem scoreSystem;
     AudioPlayer audioPlayer;
 
+    int spawnPositionIndex = 0;
+
     private void Awake()
     {
         inputSystem = GetComponent<InputSystem>();
@@ -34,41 +36,54 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         // Initialize players, add from instantiated prefab to list of players
-        int spawnPositionIndex = 0;
         foreach(PlayerInput input in playerInput) {
-
-            GameObject newPlayerGO;
-
-            // Spawn at selected position
-            if (playerSpawnPositions.Count >= spawnPositionIndex)
-            {
-                newPlayerGO = Instantiate(flyPrefab, playerSpawnPositions[spawnPositionIndex], Quaternion.identity);
-                spawnPositionIndex++;
-            }
-            else // Probably spawns at prefab default position, flies might end up on top of eachother
-            {
-                newPlayerGO = Instantiate(flyPrefab);
-            }
-
-            scoreSystem.AddScoreVariable(players.Count);
-
-            Player newPlayer = newPlayerGO.AddComponent<Player>();
-            //Debug.Log(input);
-            newPlayer.Initialize(input);
-            newPlayer.controller.Initialize(players.Count);
-            players.Add(newPlayer);
-
-            // Subscribe to events here
-            newPlayer.controller.OnFireProjectile += projectileSystem.SpawnProjectile;
-            newPlayer.controller.OnFireProjectile += audioPlayer.PlayFlyShootSound;
-
-            newPlayer.controller.OnIncreaseScore += scoreSystem.IncreaseScore;
+            AddPlayer(input);
         }
+
+        inputSystem.OnPlayerJoinInput += NewPlayerJoin;
+    }
+
+    void NewPlayerJoin(int index, PlayerInput input)
+    {
+        if (players.Count > 4)
+            return;
+
+        Debug.Log(string.Format("Player with gamepad controller index: {0} wants to join, current players: {1}", index, players.Count));
+        AddPlayer(input);
+    }
+
+    void AddPlayer(PlayerInput input)
+    {
+        GameObject newPlayerGO;
+        // Spawn at selected position
+        if (playerSpawnPositions.Count >= spawnPositionIndex)
+        {
+            newPlayerGO = Instantiate(flyPrefab, playerSpawnPositions[spawnPositionIndex], Quaternion.identity);
+            spawnPositionIndex++;
+        }
+        else // Probably spawns at prefab default position, flies might end up on top of eachother
+        {
+            newPlayerGO = Instantiate(flyPrefab);
+        }
+
+        scoreSystem.AddScoreVariable(players.Count);
+
+        Player newPlayer = newPlayerGO.AddComponent<Player>();
+        newPlayer.Initialize(input);
+        newPlayer.controller.Initialize(players.Count);
+        players.Add(newPlayer);
+
+        scoreSystem.AddNewPlayerScore(players.Count - 1);
+
+        // Subscribe to events here
+        newPlayer.controller.OnFireProjectile += projectileSystem.SpawnProjectile;
+        newPlayer.controller.OnFireProjectile += audioPlayer.PlayFlyShootSound;
+
+        newPlayer.controller.OnIncreaseScore += scoreSystem.IncreaseScore;
     }
 
     void Update()
     {
-
         projectileSystem.Tick();
         bubbleSpawner.Tick();
 

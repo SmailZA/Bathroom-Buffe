@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
 
     public void Initialize(PlayerInput input)
     {
+        Debug.Log(input);
         this.input = input;
         controller = GetComponent<FlyController>();
     }

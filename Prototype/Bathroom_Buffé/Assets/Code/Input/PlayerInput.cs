@@ -6,13 +6,13 @@ using UnityEngine;
 [System.Serializable]
 public class PlayerInput : ScriptableObject
 {
-    public bool flightInput;
-    public bool shootInput;
-    public bool rotateLeft;
-    public bool rotateRight;
+    public bool flightInput = false;
+    public bool shootInput = false;
+    public bool rotateLeft = false;
+    public bool rotateRight = false;
 
-    public float horizontalValue;
-    public float verticalValue;
+    public float horizontalValue = 0f;
+    public float verticalValue = 0f;
 
     public KeyCode flightInputButton;
     public KeyCode shootInputbutton;

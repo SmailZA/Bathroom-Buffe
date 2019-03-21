@@ -30,6 +30,11 @@ public class ProjectileSystem : MonoBehaviour
         }
     }
 
+    public void BeginDestroyProjectile(Projectile projectile)
+    {
+
+    }
+
     public void RemoveProjectile(Projectile projectile)
     {
         projectiles.Remove(projectile);
