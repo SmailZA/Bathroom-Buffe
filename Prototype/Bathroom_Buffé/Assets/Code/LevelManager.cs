@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
@@ -20,6 +21,7 @@ public class LevelManager : MonoBehaviour
     private float levelStartTime;
 
    static int totalScore = 0;
+
 
     private void Start()
     {
@@ -43,6 +45,7 @@ public class LevelManager : MonoBehaviour
         timerLabel.transform.parent.gameObject.SetActive(false);
         Time.timeScale = 1f;
         currentBubblesPopped = 0;
+        yield return null;
     }
 
     public void OnBubblePopped(Projectile projectile)
@@ -69,6 +72,8 @@ public class LevelManager : MonoBehaviour
     {
         totalScore += scorePoint;
     }
+
+   
 
     //[SerializeField] private float maxLevelLifeTime = 60f;
 
