@@ -13,8 +13,11 @@ public class LevelManager : MonoBehaviour
     public float timeUntilLevelStart = 3f;
 
     private int currentLevel = 0;
-    private int currentBubblesPopped = 0;
-
+    public static int currentBubblesPopped = 0;
+    private int bubblesPerLvl = 10;
+    private float timeStart = 0f;
+    public float timeTilEnd = 40f;
+    private float CurrentMaxTime = 0;
     private bool CanPlay
     { get; set; }
 
@@ -25,27 +28,62 @@ public class LevelManager : MonoBehaviour
 
     private void Start()
     {
+        timeTilEnd = 60;
+        CurrentMaxTime = timeTilEnd;
         StartCoroutine(CountDownTimer());
+        currentBubblesPopped = 0;
+        totalScore = 0;
+        timeStart = Time.time;
+        Invoke("EndGame", timeTilEnd);
+        InvokeRepeating("CountDown", 0, 1f);
+        InvokeRepeating("BubbleRemain", 0, 0.1f);
     }
+    void BubbleRemain()
+    {
+        this.transform.parent.transform.GetChild(2).gameObject.GetComponent<Text>().text = (bubblesPerLvl - currentBubblesPopped).ToString();
 
+    }
+    void CountDown()
+    {
+
+        timeTilEnd--;
+        this.GetComponent<Text>().text = timeTilEnd.ToString(); 
+
+    }
     private IEnumerator CountDownTimer()
     {
-        CanPlay = false;
-        Time.timeScale = 0f;
-        timerLabel.transform.parent.gameObject.SetActive(true);
+        StopPlay();
+
         float currentTime = timeUntilLevelStart;
         while (currentTime >= 0f)
         {
-            timerLabel.text = currentTime.ToString();
+            this.transform.parent.transform.GetChild(1).gameObject.GetComponent<Text>().text = currentTime.ToString();
 
             yield return new WaitForSecondsRealtime(1f);
             currentTime -= 1f;
         }
+        StartPlay();
+        yield return null;
+    }
+
+
+    private void StopPlay()
+    {
+        CanPlay = false;
+        this.transform.parent.transform.GetChild(0).gameObject.GetComponent<Text>().enabled = true;
+        this.transform.parent.transform.GetChild(1).gameObject.GetComponent<Text>().enabled = true;
+        Time.timeScale = 0f;
+
+    }
+    private void StartPlay()
+    {
+
         CanPlay = true;
-        timerLabel.transform.parent.gameObject.SetActive(false);
+        this.transform.parent.transform.GetChild(0).gameObject.GetComponent<Text>().enabled = false;
+        //timerLabel.gameObject.SetActive(false);
+        this.transform.parent.transform.GetChild(1).gameObject.GetComponent<Text>().enabled = false;
         Time.timeScale = 1f;
         currentBubblesPopped = 0;
-        yield return null;
     }
 
     public void OnBubblePopped(Projectile projectile)
@@ -68,12 +106,27 @@ public class LevelManager : MonoBehaviour
         }
     }
 
+    public void LevelCountDownTimer()
+    {
+        timeStart += Time.deltaTime;
+        //Debug.Log(timeStart);
+        if(timeStart == timeTilEnd)
+        {
+            //create new scene
+        }
+
+    }
+
     public static void AddToScore(int scorePoint)
     {
         totalScore += scorePoint;
     }
 
-   
+    private void EndGame()
+    {
+        SceneManager.LoadScene("GameOver");
+
+    }
 
     //[SerializeField] private float maxLevelLifeTime = 60f;
 
@@ -86,13 +139,25 @@ public class LevelManager : MonoBehaviour
     //}
 
     //// Update is called once per frame
-    //void Update()
-    //{
+    void Update()
+   {
+        LevelCountDownTimer();
+        Debug.Log(currentBubblesPopped);
+        if(currentBubblesPopped >= bubblesPerLvl)
+        {
+            timeTilEnd = CurrentMaxTime + 10;
+            CurrentMaxTime += 10;
+            bubblesPerLvl += 10;
+            currentBubblesPopped = 0;
+
+            StartCoroutine(CountDownTimer());
+        }
     //    levelTimeElapsed += Time.deltaTime;
 
     //    if(levelTimeElapsed == maxLevelLifeTime)
     //    {
     //        //GameOver;
     //    }
-    //}
+
+    }
 }
