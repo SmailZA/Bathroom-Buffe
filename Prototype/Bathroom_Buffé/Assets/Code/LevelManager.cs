@@ -150,7 +150,7 @@ public class LevelManager : MonoBehaviour
         if(currentBubblesPopped >= bubblesPerLvl)
         {
             timeTilEnd = CurrentMaxTime + 10;
-            CurrentMaxTime += 10;
+            CurrentMaxTime += 2;
             bubblesPerLvl += 10;
             currentBubblesPopped = 0;
             actuallyCurrentLevel++;
