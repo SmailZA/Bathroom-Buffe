@@ -36,7 +36,7 @@ public class BubbleSpawner : MonoBehaviour
 
         if (spawnTimer > spawnInterval)
         {
-            SpawnBubble(bubblePrefab, 3);
+            SpawnBubble(bubblePrefab, 2);
             spawnTimer = 0f;
         }
 
@@ -60,7 +60,8 @@ public class BubbleSpawner : MonoBehaviour
 
     public void SpawnPoopBubble()
     {
-        SpawnBubble(poopBubGO, 1);
+        int bubbleIndex = Random.Range(0, auxiliaryBubs.Length);
+        SpawnBubble(auxiliaryBubs[bubbleIndex], bubbleIndex);
         spawningPoopBub = false;
         currentPoopBubSpawnInterval = Random.Range(poopBubMinSpawnInterval, poopBubMaxSpawnInterval);
         faceRenderer.sprite = defaultFace;
@@ -76,14 +77,16 @@ public class BubbleSpawner : MonoBehaviour
     [Range(1, 20)]
     public float poopBubMaxSpawnInterval = 15;
 
-    public GameObject poopBubGO;
+    public GameObject[] auxiliaryBubs;
+    public GameObject gasBubGO;
     public float spawnPoopBubTelegraphTime = 1f;
 
     float currentPoopBubSpawnInterval;
 
     public float animSpeed = .2f;
 
-    public Sprite[] pushFace = new Sprite[2];
+    public Sprite[] auxiliaryFaces = new Sprite[2];
+    public Sprite[] gasFaces = new Sprite[2];
     public Sprite defaultFace;
 
     public SpriteRenderer faceRenderer;
@@ -106,14 +109,14 @@ public class BubbleSpawner : MonoBehaviour
             if (currentSprite == 0)
             {
                 currentSprite++;
-                faceRenderer.sprite = pushFace[0];
+                faceRenderer.sprite = auxiliaryFaces[0];
                 currentAnimateTime = 0f;
                 return;
             }
             else
             {
                 currentSprite = 0;
-                faceRenderer.sprite = pushFace[1];
+                faceRenderer.sprite = auxiliaryFaces[1];
                 currentAnimateTime = 0f;
                 return;
             }
@@ -133,6 +136,7 @@ public class BubbleSpawner : MonoBehaviour
 
         GameObject newBubbleGO = Instantiate(prefab, randomPosition, Quaternion.identity);
         Bubble newBubble = newBubbleGO.GetComponent<Bubble>();
+        //Debug.Log(string.Format("Spawn bubble with bubbleType: {0}, prefab type: {1}", bubbles[bubbleType], prefab));
         newBubble.Initialize(bubbles[bubbleType]);
 
         newBubble.behaviour = newBubble.type.bubbleBehaviour;

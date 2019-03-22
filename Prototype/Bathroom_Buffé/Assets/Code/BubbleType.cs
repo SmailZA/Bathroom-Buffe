@@ -6,7 +6,8 @@ using UnityEngine;
 public class BubbleType : ScriptableObject
 {
     public Sprite sprite;
-    public int score;
+    public int shootScore;
+    public int collideScore;
     public float speed;
 
     public BubbleBehaviour bubbleBehaviour;

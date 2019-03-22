@@ -82,6 +82,17 @@ public class GameManager : MonoBehaviour
         newPlayer.controller.OnFireProjectile += audioPlayer.PlayFlyShootSound;
 
         newPlayer.controller.OnIncreaseScore += scoreSystem.IncreaseScore;
+        newPlayer.controller.OnDecreaseScore += scoreSystem.DecreaseScore;
+
+        //newPlayer.controller.OnIncreaseScore += SendMessageToScoreSystem;
+        //newPlayer.controller.OnDecreaseScore += SendMessageToScoreSystem;
+
+        newPlayer.controller.OnHitBubble += SendMessageToScoreSystem;
+    }
+
+    public void SendMessageToScoreSystem(Vector3 position, int score)
+    {
+        scoreSystem.AddOnScreenScoreMessage(position, score);
     }
 
     void Update()

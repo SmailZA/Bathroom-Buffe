@@ -63,7 +63,7 @@ public class InputSystem : MonoBehaviour
                 bool aDown = prevState[i].Buttons.A == ButtonState.Released && state[i].Buttons.A == ButtonState.Pressed;
                 if (aDown)
                 {
-                    gamepadInputs[i].shootInput = true;
+                    gamepadInputs[i].flightInput = true;
                 }
             }
         }
@@ -72,8 +72,8 @@ public class InputSystem : MonoBehaviour
         {
             if (playerJoinedGame[i])
             {
-                activeControllers[i].flightInput = state[i].Buttons.B == ButtonState.Pressed;
                 activeControllers[i].shootInput = prevState[i].Buttons.A == ButtonState.Released && state[i].Buttons.A == ButtonState.Pressed;
+                activeControllers[i].flightInput = state[i].Triggers.Right > 0;
 
                 activeControllers[i].rotateLeft = state[i].DPad.Left == ButtonState.Pressed;
                 activeControllers[i].rotateRight = state[i].DPad.Right == ButtonState.Pressed;
@@ -84,7 +84,7 @@ public class InputSystem : MonoBehaviour
         {
             if (gamepadInputs[i])
             {
-                if (gamepadInputs[i].shootInput)
+                if (gamepadInputs[i].flightInput)
                 {
                     if (playerJoinedGame[i])
                     {
@@ -93,7 +93,7 @@ public class InputSystem : MonoBehaviour
                     }
 
                     OnPlayerJoinInput(i, gamepadInputs[i]);
-                    gamepadInputs[i].shootInput = false;
+                    gamepadInputs[i].flightInput = false;
                     playerJoinedGame[i] = true;
                     activeControllers[i] = gamepadInputs[i];
                 }

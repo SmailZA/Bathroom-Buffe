@@ -8,7 +8,7 @@ using UnityEngine;
 public class FlyController : MonoBehaviour
 {
     Animator anim;
-    Rigidbody2D body;
+    [HideInInspector] public Rigidbody2D body;
     AudioSource audioSource;
 
     bool flightInput = false;
@@ -25,6 +25,13 @@ public class FlyController : MonoBehaviour
 
     public delegate void OnIncreaseScoreDelegate(int playerIndex, int amount);
     public OnIncreaseScoreDelegate OnIncreaseScore;
+
+    public delegate void OnDecreaseScoreDelegate(int playerIndex, int amount);
+    public OnDecreaseScoreDelegate OnDecreaseScore;
+
+    public delegate void OnHitBubbleDelegate(Vector3 projectilePosition, int bubbleScore);
+    public OnHitBubbleDelegate OnHitBubble;
+
     public int playerIndex;
 
     bool isPlayingFlySound = false;
@@ -122,27 +129,37 @@ public class FlyController : MonoBehaviour
     }
 
     public float slowDownDuration;
+    public float speedUpDuration;
     public FloatVariable slowDownVariable;
+    public FloatVariable speedUpVariable;
 
     public void OnShot(GameObject thisGO, GameObject shotByGO)
     {
         body.velocity = Vector3.zero;
-        StartCoroutine(ResetSpeed());
+        StartCoroutine(ResetSpeed(slowDownDuration));
     }
 
     public void OnCollided(GameObject thisGO, GameObject collidedWithGO)
     {
+        GasBubbleBehaviour poopBubbleBehaviour = collidedWithGO.GetComponent<GasBubbleBehaviour>();
+        if (poopBubbleBehaviour)
+        {
+            flightSpeedVariable = speedUpVariable;
+            StartCoroutine(ResetSpeed(speedUpDuration));
+            return;
+        }
+
         FlyController controller = collidedWithGO.GetComponent<FlyController>();
         if (controller)
         {
             flightSpeedVariable = slowDownVariable;
-            StartCoroutine(ResetSpeed());
+            StartCoroutine(ResetSpeed(slowDownDuration));
         }
     }
 
-    IEnumerator ResetSpeed()
+    IEnumerator ResetSpeed(float waitDuration)
     {
-        yield return new WaitForSeconds(slowDownDuration);
+        yield return new WaitForSeconds(waitDuration);
         flightSpeedVariable = defaultFlightSpeedVariable;
     }
 

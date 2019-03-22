@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: SoapBubble
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: c3c84c0d525a5b34b8af2111de766f3e, type: 3}
-  score: 5
+  shootScore: 5
+  collideScore: -20
   speed: 10
   bubbleBehaviour: {fileID: 11400000, guid: f0278f3f4e3800640a818bc5e23ea794, type: 2}

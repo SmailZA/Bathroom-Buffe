@@ -22,7 +22,7 @@ public class Projectile : MonoBehaviour
     public void Launch(FlyController flyController)
     {
         controller = flyController;
-        Vector2 forceDirection = (transform.up * launchSpeed);
+        Vector2 forceDirection = (transform.up * (launchSpeed + flyController.body.velocity.magnitude));
 
         // I've heard rumors that setting velocity directly is not good, I don't care, maybe you should
         body.velocity = forceDirection;
@@ -56,7 +56,7 @@ public class Projectile : MonoBehaviour
             {
                 collidedBehaviour = collidedBubble.type.bubbleBehaviour;
                 collidedBehaviour?.OnShot(collision.gameObject, gameObject);
-                LevelManager.AddToScore(collidedBubble.type.score);
+                LevelManager.AddToScore(collidedBubble.type.shootScore);
                 LevelManager.currentBubblesPopped++;
             }
 

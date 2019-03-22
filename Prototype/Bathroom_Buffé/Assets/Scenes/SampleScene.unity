@@ -409,11 +409,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a194e2950c04934e820e7a7bf57f474, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scoreGO: {fileID: 1816071867594255594, guid: 95675e1296fe5f2499382355a7ad8283, type: 3}
+  canvasGO: {fileID: 502557436}
   scoreGOs:
   - {fileID: 2054801830}
   - {fileID: 712253877}
   - {fileID: 726240700}
   - {fileID: 1362667554}
+  fontSize: 32
 --- !u!114 &5050807
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2310,7 +2313,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 130, y: 0}
-  m_SizeDelta: {x: 150, y: 30}
+  m_SizeDelta: {x: 150, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &485969626
 MonoBehaviour:
@@ -2657,7 +2660,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 130, y: 0}
-  m_SizeDelta: {x: 150, y: 30}
+  m_SizeDelta: {x: 150, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &563144691
 MonoBehaviour:
@@ -2974,20 +2977,24 @@ MonoBehaviour:
   bubblePrefab: {fileID: 3406328621726214797, guid: 7f9b7cbbb2ff53a4f849b3835116fdd3,
     type: 3}
   bubbles:
-  - {fileID: 11400000, guid: c41342cdd388bdd47999057a6148919e, type: 2}
   - {fileID: 11400000, guid: d1d43625a851d2f4089d2d3692182044, type: 2}
-  - {fileID: 11400000, guid: 0160a5b8380f0ed45a129ef2b026619d, type: 2}
+  - {fileID: 11400000, guid: c41342cdd388bdd47999057a6148919e, type: 2}
   - {fileID: 11400000, guid: 5999efd449ebdbf40bbd6f3cc049574c, type: 2}
   spawnInterval: 1
-  poopBubMinSpawnInterval: 5
-  poopBubMaxSpawnInterval: 15
-  poopBubGO: {fileID: 3406328621726214797, guid: 7b3682d2de84b6d4da48063469a4fa14,
-    type: 3}
+  poopBubMinSpawnInterval: 3
+  poopBubMaxSpawnInterval: 4.51
+  auxiliaryBubs:
+  - {fileID: 3406328621726214797, guid: 7b3682d2de84b6d4da48063469a4fa14, type: 3}
+  - {fileID: 3406328621726214797, guid: 0eaea35deedf2e24384a974a3d41b217, type: 3}
+  gasBubGO: {fileID: 0}
   spawnPoopBubTelegraphTime: 1
   animSpeed: 0.2
-  pushFace:
+  auxiliaryFaces:
   - {fileID: 21300010, guid: 4fb2a0dc1f6ee724faab02ec8a6718cc, type: 3}
   - {fileID: 21300012, guid: 4fb2a0dc1f6ee724faab02ec8a6718cc, type: 3}
+  gasFaces:
+  - {fileID: 0}
+  - {fileID: 0}
   defaultFace: {fileID: 0}
   faceRenderer: {fileID: 0}
   defaultFaceRenderGO: {fileID: 1039531199}
@@ -5077,7 +5084,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 730, y: 200}
-  m_SizeDelta: {x: 150, y: 30}
+  m_SizeDelta: {x: 150, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &712253878
 MonoBehaviour:
@@ -5232,7 +5239,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 730, y: 100}
-  m_SizeDelta: {x: 150, y: 30}
+  m_SizeDelta: {x: 150, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &726240701
 MonoBehaviour:
@@ -6288,7 +6295,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 130, y: 0}
-  m_SizeDelta: {x: 150, y: 30}
+  m_SizeDelta: {x: 150, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1079920732
 MonoBehaviour:
@@ -6776,7 +6783,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 130, y: 0}
-  m_SizeDelta: {x: 150, y: 30}
+  m_SizeDelta: {x: 150, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1239210516
 MonoBehaviour:
@@ -6857,7 +6864,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 730, y: 0}
-  m_SizeDelta: {x: 150, y: 30}
+  m_SizeDelta: {x: 150, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1362667555
 MonoBehaviour:
@@ -8273,8 +8280,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 730, y: 300}
-  m_SizeDelta: {x: 150, y: 30}
+  m_AnchoredPosition: {x: 730, y: 296.3}
+  m_SizeDelta: {x: 150, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2054801831
 MonoBehaviour:

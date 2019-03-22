@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: PoopBubble
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300026, guid: 180029628ad0d254f8a1070422eba91c, type: 3}
-  score: 50
+  shootScore: 15
+  collideScore: 50
   speed: 10
-  bubbleBehaviour: {fileID: 11400000, guid: f0278f3f4e3800640a818bc5e23ea794, type: 2}
+  bubbleBehaviour: {fileID: 11400000, guid: 8491465b41131074fa08c1b2c4ab68b7, type: 2}
