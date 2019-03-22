@@ -12,11 +12,12 @@ public class PinkBubble : BubbleBehaviour
     public override void OnShot(GameObject thisGO, GameObject shotByGO)
     {
         FlyController controller = shotByGO.GetComponent<Projectile>().controller;
-        controller?.OnIncreaseScore(controller.playerIndex, 5);
+        Bubble bubble = thisGO.GetComponent<Bubble>();
+        controller?.OnIncreaseScore(controller.playerIndex, bubble.type.score);
 
         // Drop power up
         //Destroy(thisGO);
-        thisGO.GetComponent<Bubble>().BeginDestroy();
+        bubble.BeginDestroy();
     }
     
     public override void OnCollided(GameObject thisGO, GameObject collidedWithGO)

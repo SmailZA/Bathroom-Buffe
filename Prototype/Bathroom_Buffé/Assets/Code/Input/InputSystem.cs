@@ -88,7 +88,6 @@ public class InputSystem : MonoBehaviour
                 {
                     if (playerJoinedGame[i])
                     {
-                        Debug.Log("player with index: " + i + " has already joined!");
                         //gamepadInputs[i].shootInput = false;
                         return;
                     }

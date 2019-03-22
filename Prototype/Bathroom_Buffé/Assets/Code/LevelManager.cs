@@ -147,7 +147,6 @@ public class LevelManager : MonoBehaviour
     void Update()
    {
         LevelCountDownTimer();
-        Debug.Log(currentBubblesPopped);
         if(currentBubblesPopped >= bubblesPerLvl)
         {
             timeTilEnd = CurrentMaxTime + 10;

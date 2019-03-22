@@ -39,7 +39,7 @@ public class ScoreSystem : MonoBehaviour
         scoreGOs[index].GetComponent<Text>().text = scores[index].score.ToString();
         foreach (Transform go in scoreGOs[index].GetComponentsInChildren<Transform>())
         {
-            Debug.Log("found go: " + go + " saved gameobject for num: " + scoreGOs[index]);
+/*            Debug.Log("found go: " + go + " saved gameobject for num: " + scoreGOs[index]);*/
             if (go.name != scoreGOs[index].name)
                 go.gameObject.SetActive(false);
         }

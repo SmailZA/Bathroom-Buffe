@@ -50,7 +50,7 @@ public class GameManager : MonoBehaviour
         if (players.Count > 4)
             return;
 
-        Debug.Log(string.Format("Player with gamepad controller index: {0} wants to join, current players: {1}", index, players.Count));
+/*        Debug.Log(string.Format("Player with gamepad controller index: {0} wants to join, current players: {1}", index, players.Count));*/
         AddPlayer(input);
     }
 
